@@ -34,7 +34,7 @@ pipeline {
         stage( 'Test-2'){
             steps {
                 sh'''
-                echo 'Testing the codes test cases
+                  echo 'Testing the codes test cases'
                 '''
             }
             
@@ -43,7 +43,7 @@ pipeline {
         stage( 'Deploy-3'){
             steps{
                 sh'''
-                echo 'Deploying  the build
+                  echo 'Deploying  the build'
                 '''
             }
             
