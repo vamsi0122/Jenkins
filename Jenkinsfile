@@ -1,11 +1,12 @@
 pipeline {
     agent {node { label 'Agent-1'} }
+
     options{
         timeout (time: 1, unit: 'Hours')
     }
 
     environment{
-        USER: 'vamsi'
+        USER = 'vamsi'
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -15,7 +16,7 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
-    stages{
+    stages {
         stage('Build-1'){
             steps {
                 echo "====++++building++++===="
@@ -26,6 +27,8 @@ pipeline {
                 printenv
                 '''
             }
+        }
+
         stage( 'Test-2'){
             steps {
                 sh'''
@@ -67,7 +70,7 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
-        
-        }
+
     }
+    
 }
