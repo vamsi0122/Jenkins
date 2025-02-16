@@ -31,24 +31,6 @@ pipeline {
             }
         }
 
-        stage( 'Test-2'){
-            steps {
-                sh'''
-                  echo 'Testing the codes test cases'
-                '''
-            }
-            
-        }
-
-        stage( 'Deploy-3'){
-            steps{
-                sh'''
-                  echo 'Deploying  the build'
-                '''
-            }
-            
-        }
-
         stage( 'Password-4'){
             environment{
                 AUTH = credentials('centos')
